@@ -8,8 +8,9 @@
     min-height: 100px;
     border-bottom: 1px solid #3a3939;
     > main{
+        display: none;
         > i{
-            display: none;
+            color: #FFFFFF;
         }
         > main{
             display: none;
@@ -146,6 +147,7 @@
     #header{
         width: 95%;
         > main{
+            display: block;
             > i{
                 display: inline-block;
                 color: #FFF;

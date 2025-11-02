@@ -4,8 +4,23 @@ import Head from "next/head";
 import { useCart } from "../../lib/CartContext";
 import { useEffect, useMemo } from "react";
 
+interface CartItem {
+  slug: string;
+  name: string;
+  names?: string;
+  price: number;
+  quantity: number;
+  image: string;
+}
+
+interface CartContextType {
+  cart: CartItem[];
+  removeAll: () => void;
+  updateQuantity: (slug: string, type: "inc" | "dec") => void;
+}
+
 export default function Header() {
-  const { cart, removeAll, updateQuantity } = useCart();
+  const { cart, removeAll, updateQuantity } = useCart() as CartContextType;
 
   const total = useMemo(() => {
     return cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
@@ -13,17 +28,19 @@ export default function Header() {
 
   useEffect(() => {
     const cartIcon = document.querySelector("#cartIcon");
-    const dropdown = document.querySelector("#dropdown");
+    const dropdown = document.querySelector("#dropdown") as HTMLElement | null;
 
-    function toggleDropdown(e) {
+    if (!cartIcon || !dropdown) return;
+
+    const toggleDropdown = (e: MouseEvent) => {
       e.stopPropagation();
       dropdown.style.display =
         dropdown.style.display === "block" ? "none" : "block";
-    }
+    };
 
-    function closeDropdown() {
+    const closeDropdown = () => {
       dropdown.style.display = "none";
-    }
+    };
 
     cartIcon.addEventListener("click", toggleDropdown);
     window.addEventListener("click", closeDropdown);
@@ -44,49 +61,59 @@ export default function Header() {
       </Head>
 
       <header id={Styles.header}>
-        
         <main>
-          <i class="fa-solid fa-bars" id="menu" onClick={() => {
-            document.querySelector("header > main > main").style.display = "block";
-          }}></i>
+          <i
+            className="fa-solid fa-bars"
+            id="menu"
+            onClick={() => {
+              const element = document.querySelector(
+                "header > main > main"
+              ) as HTMLElement | null;
+              if (element) element.style.display = "block";
+            }}
+          ></i>
           <main>
             <section>
               <div>
-                  <img src="/headphone.png" alt="headphone" />
-                  <h4>HEADPHONES</h4>
-                  <Link href="/Headphone">
-                      <p>
-                          SHOP 
-                          <img src="/arrow.png" alt="" />
-                      </p>
-                  </Link>
-                  
+                <img src="/headphone.png" alt="headphone" />
+                <h4>HEADPHONES</h4>
+                <Link href="/Headphone">
+                  <p>
+                    SHOP <img src="/arrow.png" alt="" />
+                  </p>
+                </Link>
               </div>
               <div>
-                  <img src="/speaker.png" alt="speaker" />
-                  <h4>SPEAKERS</h4>
-                  <Link href="/Speaker">
-                      <p>
-                          SHOP 
-                          <img src="/arrow.png" alt="" />
-                      </p>
-                  </Link>
+                <img src="/speaker.png" alt="speaker" />
+                <h4>SPEAKERS</h4>
+                <Link href="/Speaker">
+                  <p>
+                    SHOP <img src="/arrow.png" alt="" />
+                  </p>
+                </Link>
               </div>
               <div>
-                  <img src="/earphone.png" alt="earphone" />
-                  <h4>EARPHONES</h4>
-                  <Link href="/Earphone">
-                      <p>
-                          SHOP 
-                          <img src="/arrow.png" alt="" />
-                      </p>
-                  </Link>
+                <img src="/earphone.png" alt="earphone" />
+                <h4>EARPHONES</h4>
+                <Link href="/Earphone">
+                  <p>
+                    SHOP <img src="/arrow.png" alt="" />
+                  </p>
+                </Link>
               </div>
-          </section>
+            </section>
           </main>
         </main>
+
         <Link href="/">
-          <i class="fa-solid fa-bars" style={{color: "#FFF", cursor: "pointer", display: "none"}}></i>
+          <i
+            className="fa-solid fa-bars"
+            style={{
+              color: "#FFF",
+              cursor: "pointer",
+              display: "none",
+            }}
+          ></i>
           <img src="/logo.svg" alt="logo" />
         </Link>
 
@@ -118,7 +145,7 @@ export default function Header() {
                       <div>
                         <img src={item.image} alt={item.name} />
                         <nav>
-                          <h4>{item.names}</h4>
+                          <h4>{item.names || item.name}</h4>
                           <p>${item.price}</p>
                         </nav>
                       </div>
@@ -148,7 +175,12 @@ export default function Header() {
                 </summary>
 
                 <button
-                  onClick={() => document.querySelector("#check").click()}
+                  onClick={() => {
+                    const link = document.querySelector(
+                      "#check"
+                    ) as HTMLElement | null;
+                    if (link) link.click();
+                  }}
                 >
                   Checkout
                 </button>
@@ -157,7 +189,6 @@ export default function Header() {
             )}
           </aside>
         </div>
-        
       </header>
     </>
   );

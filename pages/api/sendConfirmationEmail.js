@@ -6,16 +6,14 @@ export default async function handler(req, res) {
   const { email, name, items, total } = req.body;
 
   try {
-    // ✅ 1. Create transporter
     const transporter = nodemailer.createTransport({
-      service: "gmail", // You can change to Outlook, Yahoo, etc.
+      service: "gmail",
       auth: {
         user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS, // App Password, not your normal password!
+        pass: process.env.EMAIL_PASS,
       },
     });
 
-    // ✅ 2. Email content
     const mailOptions = {
       from: `"Audiophile" <${process.env.EMAIL_USER}>`,
       to: email,
@@ -37,7 +35,6 @@ export default async function handler(req, res) {
       `,
     };
 
-    // ✅ 3. Send mail
     await transporter.sendMail(mailOptions);
 
     res.status(200).json({ message: "Email sent successfully" });
