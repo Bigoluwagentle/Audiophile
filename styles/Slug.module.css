@@ -251,8 +251,11 @@
                     text-align: center;
                     margin-top: 30px;
                     width: 100%;
+                    > h1{
+                        width: 100%;
+                    }
                     > p{
-                        width: 70%;
+                        width: 90%;
                     }
                     > div{
                         width: 100%;
@@ -266,12 +269,18 @@
                 > div{
                     width: 100%;
                     > p{
-                        width: 70%;
+                        width: 100%;
                     }
+                }
+                > nav{
+                    width: 100%;
                 }
             }
         }
-
+        > h4{
+            width: 100%;
+            font-size: 2rem;
+        }
         > summary{
             width: 95%;
             flex-direction: column;

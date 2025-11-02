@@ -44,7 +44,47 @@ export default function Header() {
       </Head>
 
       <header id={Styles.header}>
-        <i class="fa-solid fa-bars" id="menu"></i>
+        
+        <main>
+          <i class="fa-solid fa-bars" id="menu" onClick={() => {
+            document.querySelector("header > main > main").style.display = "block";
+          }}></i>
+          <main>
+            <section>
+              <div>
+                  <img src="/headphone.png" alt="headphone" />
+                  <h4>HEADPHONES</h4>
+                  <Link href="/Headphone">
+                      <p>
+                          SHOP 
+                          <img src="/arrow.png" alt="" />
+                      </p>
+                  </Link>
+                  
+              </div>
+              <div>
+                  <img src="/speaker.png" alt="speaker" />
+                  <h4>SPEAKERS</h4>
+                  <Link href="/Speaker">
+                      <p>
+                          SHOP 
+                          <img src="/arrow.png" alt="" />
+                      </p>
+                  </Link>
+              </div>
+              <div>
+                  <img src="/earphone.png" alt="earphone" />
+                  <h4>EARPHONES</h4>
+                  <Link href="/Earphone">
+                      <p>
+                          SHOP 
+                          <img src="/arrow.png" alt="" />
+                      </p>
+                  </Link>
+              </div>
+          </section>
+          </main>
+        </main>
         <Link href="/">
           <i class="fa-solid fa-bars" style={{color: "#FFF", cursor: "pointer", display: "none"}}></i>
           <img src="/logo.svg" alt="logo" />
@@ -117,6 +157,7 @@ export default function Header() {
             )}
           </aside>
         </div>
+        
       </header>
     </>
   );

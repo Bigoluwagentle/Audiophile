@@ -231,7 +231,11 @@
                 text-align: center;
                 padding-bottom: 20px;
                 > p{
-                    width: 80%;
+                    width: 90%;
+                }
+                > h1{
+                    width: 100%;
+                    font-size: 3rem;
                 }
             }
         }
@@ -242,6 +246,7 @@
             > div{
                 width: 100%;
                 margin-bottom: 50px;
+                padding-bottom: 10px;
             }
         }
 
@@ -252,6 +257,7 @@
                 width: 95%;
                 > img{
                     margin: 20px 0px;
+                    width: 80%;
                 }
                 >nav{
                     display: flex;
@@ -260,13 +266,14 @@
                     text-align: center;
                     width: 100%;
                     > p{
-                        width: 70%;
+                        width: 80%;
                     }
                 }
             }
 
             > aside{
                 width: 95%;
+                background-position: center;
                 > h1, button{
                     margin-left: 10px;
                 }
