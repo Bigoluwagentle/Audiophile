@@ -1,0 +1,302 @@
+#ProductDetails{
+    > section{
+        width: 100%;
+        height: auto;
+        background-color: #0E0E0E;
+    }
+    > nav{
+        width: 90%;
+        margin: 50px auto;
+        > button{
+            background-color: transparent;
+            border: none;
+            color: #3a3939;
+            cursor: pointer;
+        }
+    }
+
+    > div{
+        width: 90%;
+        margin: auto;
+        > article{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            > img{
+                height: 60vh;
+                object-fit: contain;
+            }
+            > nav{
+                width: 50%;
+                > span{
+                    color: #D87D4A;
+                    letter-spacing: 5px;
+                }
+                > h1{
+                    margin-top: 10px;
+                    width: 68%;
+                    font-size: 40px;
+                    font-weight: 700;
+                    letter-spacing: 1.43px;
+                    line-height:40px;
+                }
+                > p{
+                    margin-top: 20px;
+                    width: 80%;
+                    color: #8b8989;
+                    margin-top: 15px;
+                    width: 80%;
+                    font-size: 15px;
+                    line-height: 25px;
+                }
+                > li{
+                    margin-top: 20px;
+                    letter-spacing: 3px;
+                    list-style-type: none;
+                    font-weight: 700;
+                }
+                > div{
+                    display: flex;
+                    margin-top: 30px;
+                    gap: 20px;
+                    > aside{
+                        width: 120px;
+                        min-height: 45px;
+                        background-color: #F1F1F1;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 0px 8px;
+                        > i{
+                            cursor: pointer;
+                            font-size: 0.7rem;
+                        }
+                    }
+                    > button{
+                        min-width: 150px;
+                        min-height: 45px;
+                        background-color: #D87D4A;
+                        border: none;
+                        cursor: pointer;
+                        color: #FFF;
+                        transition: all 0.5s;
+                        &:hover{
+                            background-color: #FBAF85;
+                        }
+                    }
+                }
+            }
+        }
+
+        > summary{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 100px;
+            gap: 30px;
+            > div{
+                width: 50%;
+                > p{
+                    margin-bottom: 30px;
+                }
+            }
+            > nav{
+                width: 30%;
+                > p{
+                    display: flex;
+                    align-items: center;
+                    > span{
+                        color: #D87D4A;
+                        margin-right: 15px;
+                    }
+                }
+            }
+            h2{
+                margin-bottom: 20px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            p{
+                color: #8b8989;
+                line-height: 25px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+        }
+    }
+
+    > summary{
+        width: 90%;
+        margin: 40px auto;
+        min-height: 40vh;
+        display: flex;
+        > div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            > img{
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+            }
+            
+        }
+        > img{
+            width: 80%;
+            height: 83vh;
+            object-fit: contain;
+        }
+    }
+    > h4{
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 100px;
+        font-size:36px;
+        letter-spacing: 1.43px;
+    }
+    > aside{
+        width: 90%;
+        margin: 50px auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        > div{
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            > img{
+                width: 100%;
+                object-fit: contain;
+                margin-bottom: 20px;
+                letter-spacing: 1.71px;
+            }
+            button{
+                min-width: 150px;
+                min-height: 40px;
+                background-color: #D87D4A;
+                border: none;
+                color: #FFF;
+                margin-top: 30px;
+                cursor: pointer;
+                transition: all 0.5s;
+                &:hover{
+                    background-color: #FBAF85;
+                }
+            }
+        }
+    }
+
+    > main{
+        width: 90%;
+        margin: 200px auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        background-color: #FFF;
+        > div{
+            flex: 1;
+            min-height: 40vh;
+            background-color: #F1F1F1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 10px;
+            cursor: pointer;
+            &:hover{
+                color: #D87D4A;
+            }
+            > img{
+                margin: -60px 0px 40px 0px;
+                width: 100px;
+                height: 150px;
+                object-fit: contain;
+            }
+            > h4{
+                margin-bottom: 30px;
+                font-family: Manrope;
+            }   
+            a{
+                text-decoration: none;
+                color: #000000;
+            }
+            p{
+                display: flex;
+                align-items: center;
+                font-size: 13px;
+                font-family: Manrope;
+                > img{
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 780px){
+    #ProductDetails{
+        > div{
+            width: 95%;
+            > article{
+                flex-direction: column;
+                > img{
+                    width: 100%;
+                    object-fit:none;
+                    height: 80vh;
+                }
+                > nav{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    margin-top: 30px;
+                    width: 100%;
+                    > p{
+                        width: 70%;
+                    }
+                    > div{
+                        width: 100%;
+                        justify-content: center;
+                    }
+                }
+            }
+
+            > summary{
+                flex-direction: column;
+                > div{
+                    width: 100%;
+                    > p{
+                        width: 70%;
+                    }
+                }
+            }
+        }
+
+        > summary{
+            width: 95%;
+            flex-direction: column;
+            > img{
+                width: 100%;
+                object-fit: cover;
+                margin-top: 40px;
+            }
+        }
+        > aside{
+            flex-direction: column;
+            width: 95%;
+            > div{
+                width: 100%;
+                margin-bottom: 50px;
+            }
+        }
+
+        > main{
+            flex-direction: column;
+            width: 95%;
+            > div{
+                width: 100%;
+                margin-bottom: 70px;
+            }
+        }
+    }
+}

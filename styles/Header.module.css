@@ -1,0 +1,150 @@
+#header{
+    width: 90%;
+    background-color: #0E0E0E;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100px;
+    border-bottom: 1px solid #3a3939;
+    > i{
+        display: none;
+    }
+    > nav{
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        > a{
+            text-decoration: none;
+            color: #FFFFFF;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            &:hover{
+                color: #D87D4A;
+            }
+        }
+    }
+
+    > div{
+        > img{
+            cursor: pointer;
+        }
+        > aside{
+            display: none;
+            width: 30%;
+            min-height: 10vh;
+            background-color: #FFF;
+            position: absolute;
+            right: 0;
+            margin-right: 55px;
+            margin-top: 50px;
+            border-radius: 5px;
+            border: 1px solid #3a3939;
+            padding-bottom: 15px;
+            > section{
+                display: flex;
+                justify-content: space-between;
+                padding: 10px;
+                > h2{
+                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                    font-size: 1rem;
+                }
+                > button{
+                    background-color: transparent;
+                    border: none;
+                    cursor: pointer;
+                    &:hover{
+                        color: #D87D4A;
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            > article{
+                padding: 20px;
+                > section > nav{
+                    width: 100%;
+                    min-height: 40px;
+                    margin-bottom: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    > div{
+                        display: flex;
+                        align-items: center;
+                        > img{
+                            width: 50px;
+                            margin-right: 8px;
+                            border-radius: 4px;
+                        }
+                        > nav{
+                            > h4{
+                                font-family: Arial, Helvetica, sans-serif;
+                                font-size: 0.8rem;
+                            }
+                            > p{
+                                color: #3a3939;
+                                font-size: 0.8rem;
+                                margin-top: 6px;
+                                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                            }
+                        }
+                    }
+
+                    > aside{
+                        width: 100px;
+                        min-height: 45px;
+                        background-color: #F1F1F1;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 0px 8px;
+                        > i{
+                            cursor: pointer;
+                            font-size: 0.7rem;
+                        }
+                    }
+                }
+                
+            }
+            > summary{
+                padding: 20px;
+                display: flex;
+                justify-content: space-between;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                > span{
+                    color: #827e7e;
+                }
+            }
+            > button{
+                display: block;
+                width: 90%;
+                margin: auto;
+                min-height: 45px;
+                background-color: #D87D4A;
+                border: none;
+                color: #FFF;
+                cursor: pointer;
+                margin-top: 20px;
+                transition: all 0.5s;
+                &:hover{
+                    background-color: #FBAF85;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 780px){
+    #header{
+        width: 95%;
+        > i{
+            display: inline-block;
+            color: #FFF;
+        }
+        > nav{
+            display: none;
+        }
+    }
+}

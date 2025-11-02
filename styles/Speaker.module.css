@@ -1,0 +1,153 @@
+#speaker{
+    width: 100%;
+    > div{
+        min-height: 40vh;
+        background-color: #0E0E0E;
+        > nav{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 30vh;
+            color: #FFF;
+            letter-spacing: 1.43px;
+            font-weight: 700;
+            > h1{
+                font-size: 40px;
+            }
+        }
+    }
+    > section{
+        width: 90%;
+        margin: 100px auto;
+        min-height: 100vh;
+        > aside{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 30px;
+            > img{
+                height: 60vh;
+                object-fit: contain;
+            }
+            > nav{
+                width: 50%;
+                > span{
+                    display: inline-block;
+                    color: #D87D4A;
+                    letter-spacing: 3px;
+                    margin-bottom: 10px;
+                }
+                > h1{
+                    font-size: 40px;
+                    font-weight: 700;
+                    letter-spacing: 1.43px;
+                    line-height:40px;
+                }
+                > p{
+                    margin-top: 15px;
+                    color: #3a3939;
+                    width: 80%;
+                    font-size: 15px;
+                    line-height: 25px;
+                }
+                button{
+                    min-width: 150px;
+                    min-height: 50px;
+                    background-color: #D87D4A;
+                    color: #FFF;
+                    border: none;
+                    cursor: pointer;
+                    margin-top: 30px;
+                    transition: all 0.5s;
+                    &:hover{
+                        background-color: #FBAF85;
+                    }
+                }
+            }
+        }
+    }
+
+    > summary{
+        width: 90%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        /* background-color: #FFF; */
+        > div{
+            flex: 1;
+            min-height: 40vh;
+            background-color: #F1F1F1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 10px;
+            cursor: pointer;
+            &:hover{
+                color: #D87D4A;
+            }
+            > img{
+                margin: -60px 0px 40px 0px;
+                width: 100px;
+                height: 150px;
+                object-fit: contain;
+            }
+            > h4{
+                margin-bottom: 30px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            > p{
+                display: flex;
+                align-items: center;
+                font-size: 13px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                > img{
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 780px){
+    #speaker{
+        > section{
+            > aside{
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 100px;
+                width: 100%;
+                > img{
+                    width: 100%;
+                    object-fit:none;
+                    height: 80vh;
+                }
+                > nav{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    margin-top: 30px;
+                    width: 100%;
+                    > p{
+                        width: 70%;
+                    }
+                }
+                + aside{
+                    flex-direction: column-reverse;
+                }
+            }
+        }
+
+        > summary{
+            flex-direction: column;
+            width: 95%;
+            > div{
+                width: 100%;
+                margin-bottom: 70px;
+            }
+        }
+    }
+}
