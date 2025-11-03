@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Header from "./components/Header";
 import Styles from "../styles/Headphone.module.css";
-import Footer from "./components/Footer.tsx";
+import Footer from "./components/Footer";
 import React from "react";
 
 const Headphone: React.FC = () => {
