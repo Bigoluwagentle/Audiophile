@@ -4,7 +4,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Styles from "../../styles/Slug.module.css";
 import Header from "../components/Header";
-// import Footer from "../components/Footer";
+import Footer from "../components/Footer";
 import { useState } from "react";
 import { useCart } from "../../lib/CartContext";
 
@@ -175,7 +175,7 @@ export default function ProductDetails() {
           </div>
         </main>
 
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </>
   );
