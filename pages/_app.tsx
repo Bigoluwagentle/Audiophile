@@ -1,4 +1,4 @@
-import "@/styles/globals.css";
+import '../styles/globals.css';
 import { Manrope } from "next/font/google";
 import { CartProvider } from "../lib/CartContext";
 import { ConvexProvider, ConvexReactClient } from "convex/react";

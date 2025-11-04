@@ -1,20 +1,10 @@
-// pages/api/checkout.js
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const MAIL_FROM = process.env.MAIL_FROM || "orders@example.com";
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
 
-// ---- Placeholder: implement saving to Convex here ----
 async function saveOrderToConvex(order) {
-  // Replace this function with real Convex insert according to Convex docs.
-  // Example pseudocode using Convex JS server SDK (adjust per their docs):
-  // const { Convex } = require("convex/server");
-  // const convex = new Convex(process.env.CONVEX_URL);
-  // const inserted = await convex.db.insert("orders", order);
-  // return inserted._id || inserted.id || inserted;
-  //
-  // For now, simulate:
   const fakeId = "ORD-" + Date.now();
   return fakeId;
 }
@@ -50,14 +40,12 @@ export default async function handler(req, res) {
       return res.status(400).json({ message: "Invalid order payload" });
     }
 
-    // Save order to Convex (replace with real Convex call)
     const orderId = await saveOrderToConvex({
       ...payload,
       status: "pending",
       createdAt: new Date().toISOString(),
     });
 
-    // Send confirmation email via Resend
     const html = buildOrderHtml({ orderId, customer: payload.customer, items: payload.items, totals: payload.totals, shipping: payload.shipping });
 
     await resend.emails.send({
